@@ -23,17 +23,17 @@ for installation on EdgeOS.
 
 # Installation
 
-Open a console to your EdgeOS router and add the `/config/data/firstboot.d` directory:
+Open a console to your EdgeOS router and add the `/config/scripts/firstboot.d` directory:
 
 ```bash
-ubnt@EdgeRouter-X-5-Port:~$ sudo mkdir -p /config/data/firstboot.d
+ubnt@EdgeRouter-X-5-Port:~$ sudo mkdir -p /config/scripts/firstboot.d
 ```
 
 Copy the `ddclient-ubnt.sh` script to the `firstboot.d` directory and set execute permissions:
 
 ```bash
-ubnt@EdgeRouter-X-5-Port:~$ sudo curl -sSL -o /config/data/firstboot.d/ddclient-ubnt.sh https://raw.githubusercontent.com/markeissler/edgeos-extras/master/ddclient-ubnt/config/data/firstboot.d/ddclient-ubnt.sh
-ubnt@EdgeRouter-X-5-Port:~$ sudo chmod 0755 /config/data/firstboot.d/ddclient-ubnt.sh
+ubnt@EdgeRouter-X-5-Port:~$ sudo curl -sSL -o /config/scripts/firstboot.d/ddclient-ubnt.sh https://raw.githubusercontent.com/markeissler/edgeos-extras/master/ddclient-ubnt/config/scripts/firstboot.d/ddclient-ubnt.sh
+ubnt@EdgeRouter-X-5-Port:~$ sudo chmod 0755 /config/scripts/firstboot.d/ddclient-ubnt.sh
 ```
 
 The above steps will ensure that the updated `ddclient-ubnt` package is re-installed after firmware updates.
@@ -41,7 +41,7 @@ The above steps will ensure that the updated `ddclient-ubnt` package is re-insta
 Next, run the script to install for the first time:
 
 ```bash
-ubnt@EdgeRouter-X-5-Port:~$ sudo /config/data/firstboot.d/ddclient-ubnt.sh
+ubnt@EdgeRouter-X-5-Port:~$ sudo /config/scripts/firstboot.d/ddclient-ubnt.sh
 ```
 
 That's all there is to it. Continue with configuration.
